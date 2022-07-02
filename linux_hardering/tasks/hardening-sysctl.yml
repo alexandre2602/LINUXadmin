@@ -1,4 +1,7 @@
 ---
+    - name: Coleta facts
+      package_facts:
+         manager: "auto"
     - name: sysctl - Configuracoes gerais
       ansible.posix.sysctl:
         name: '{{ item.name }}'
