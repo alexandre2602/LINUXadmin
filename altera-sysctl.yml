@@ -7,10 +7,3 @@
   become: yes
   become_method: su
   become_user: root
-
-  tasks:
-    - name: Coleta facts
-      package_facts:
-         manager: "auto"
-
-    - include: "tasks-harden/hardening-sysctl.yml"
