@@ -1,0 +1,9 @@
+- hosts: giropops
+  gather_facts: true
+  user: ubuntu
+  become: true
+  pre_tasks:
+    - name: Instala dependencias para o Debian
+      raw: apt-get install -y python3-apt python3
+  roles:
+    - linux_hardering
