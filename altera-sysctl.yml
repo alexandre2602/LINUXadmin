@@ -1,0 +1,16 @@
+---
+# Hardening de kernel e parametros do sistema operacional
+
+- hosts: "{{ giropops }}"
+  gather_facts: true
+  remote_user: "{{ meu_usuario }}"
+  become: yes
+  become_method: su
+  become_user: root
+
+  tasks:
+    - name: Coleta facts
+      package_facts:
+         manager: "auto"
+
+    - include: "tasks-harden/hardening-sysctl.yml"
